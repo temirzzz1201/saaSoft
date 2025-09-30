@@ -25,7 +25,6 @@ export const useFormStore = defineStore("form", () => {
 
   const load = () => {
     const saved = localStorage.getItem("formRows");
-    console.log("saved ", saved);
 
     if (saved) {
       const parsed = JSON.parse(saved);
@@ -45,7 +44,6 @@ export const useFormStore = defineStore("form", () => {
       (row.type === SelectType.local ? !!row.password : true);
 
     if (!isValid) {
-      console.log("not valid");
       return;
     }
 
